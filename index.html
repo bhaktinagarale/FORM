@@ -1,102 +1,199 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    
+  <head>
     <title>Form</title>
     <style>
-        a{
-           border: 2px solid black;
-           text-decoration: dashed;
-           border-radius: 20%;
-        }
-        
-        a:hover{
-           background-color: blueviolet;
-            }
-   
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      .heading {
+        color: #00008b;
+      }
+
+      form {
+        font-family: "Times New Roman", Times, serif;
+        font-size: 1.5em;
+        text-align: left;
+      }
+
+      .legend {
+        font-weight: bold;
+      }
+      .button {
+        margin-top: 20px;
+        width: 100%;
+        background-color: #007bff;
+        color: #e6e3e3;
+        padding: 10px 20px;
+        text-decoration: none;
+        border: none;
+        cursor: pointer;
+        border-radius: 5px;
+        transition: background-color 0.3s ease;
+        transition: color 0.3s ease;
+      }
+      .button:hover {
+        background-color: #2087f6;
+        color: white;
+      }
+
+      a {
+        border: 2px solid black;
+        text-decoration: dashed;
+        border-radius: 20%;
+      }
+
+      a:hover {
+        background-color: blueviolet;
+      }
+      .container {
+        display: grid;
+        place-content: center;
+      }
+      fieldset {
+        margin-top: 20px;
+        padding: 20px;
+      }
+      table {
+        border-collapse: separate;
+        border-spacing: 10px;
+      }
     </style>
-   
-</head>
-<body >
-      <center>
-      <h1 style="color: darkblue;">Course Registration Form</h1>
+  </head>
 
-      
+  <body>
+    <div class="container">
+      <h1 class="heading">Course Registration Form</h1>
 
-      <form  style=" width: 30%; font-family: 'Times New Roman', Times, serif; font-size: 18px; text-align: left; color: blue; ">
-            <fieldset >
-             <legend>Personal Details</legend>
-               <table>
-                <tr><td><label>First Name</label></td><td><input type="text" name="FN" placeholder="Ex.Bhakti" size="15"></td></tr>
+      <form action="https://thetapacademy.com/">
+        <fieldset>
+          <legend class="legend top-legend">Personal Details</legend>
 
-                <tr><td><label>Middle Name</label></td><td><input type="text" name="MN" placeholder="Ex.Vivekanand" size="15"></td></tr>
+          <table>
+            <tr>
+              <td><label for="first-name">First Name:</label></td>
+              <td>
+                <input
+                  type="text"
+                  name="first-name"
+                  id="first-name"
+                  placeholder="Bhakti"
+                />
+              </td>
+            </tr>
 
-                <tr><td><label>Last Name</label></td><td><input type="text" name="LN" placeholder="Ex.Nagarale" size="15"></td></tr>
+            <tr>
+              <td><label for="middle-name">Middle Name:</label></td>
+              <td>
+                <input
+                  type="text"
+                  name="middle-name"
+                  id="middle-name"
+                  placeholder="Vivekanand"
+                />
+              </td>
+            </tr>
 
-                <tr><td><label>Password</label></td><td><input type="password" name="pwd" placeholder="min 8 character" size="15"></td></tr>
+            <tr>
+              <td><label for="last-name">Last Name:</label></td>
+              <td>
+                <input
+                  type="text"
+                  name="last-name"
+                  id="last-name"
+                  placeholder="Nagarale"
+                />
+              </td>
+            </tr>
 
-                <tr><td><label>Email</label></td><td><input type="email" name="mail" placeholder="Ex............@gmail.com" size="15"></td></tr>
+            <tr>
+              <td><label for="password">Password:</label></td>
+              <td>
+                <input
+                  type="password"
+                  name="password"
+                  id="password"
+                  placeholder="jY3-814w"
+                />
+              </td>
+            </tr>
 
-                <tr><td><label>DOB</label></td><td><input type="date" name="dob"  ></td></tr>
+            <tr>
+              <td><label for="email">Email:</label></td>
+              <td>
+                <input
+                  type="email"
+                  name="email"
+                  id="email"
+                  placeholder="example@gmail.com"
+                />
+              </td>
+            </tr>
 
-                <tr><td><label>Mobile Number</label></td><td><input type="number" name="mb" size="11"   ></td></tr>
+            <tr>
+              <td><label for="">Date of Birth:</label></td>
+              <td><input type="date" id="dob" name="dob" /></td>
+            </tr>
 
+            <tr>
+              <td><label for="mb">Mobile Number:</label></td>
+              <td><input type="tel" name="mb" id="mb" /></td>
+            </tr>
+          </table>
+        </fieldset>
 
-               </table>
-            </fieldset>
+        <fieldset>
+          <legend class="legend top-legend">Educational Details</legend>
+          <div class="department-container">
+            <!-- <p>Choose Your Department:</p> -->
+            <label for="dept">Choose Your Department:</label>
+            <input type="radio" id="cse" name="dept" value="cse" />
+            <label for="cse">CSE</label>
 
-            <fieldset>
+            <input type="radio" id="eee" name="dept" value="eee" />
+            <label for="eee">EEE</label>
 
-             <legend>Educational Details</legend>
-               <table>
+            <input type="radio" id="civil" name="dept" value="civil" />
+            <label for="civil">CIVIL</label>
 
+            <input type="radio" id="mech" name="dept" value="mech" />
+            <label for="mech">MECH</label>
+          </div>
+          <br />
+          <div class="yog">
+            <label for="yog">Year of graduation:</label>
+            <input type="text" list="yogOptions" id="yog" name="yog" />
 
-               <label for="dept">Department</label><br><br>
+            <datalist id="yogOptions">
+              <option>2017</option>
+              <option>2018</option>
+              <option>2019</option>
+              <option>2020</option>
+              <option>2021</option>
+              <option>2022</option>
+              <option>2023</option>
+            </datalist>
+          </div>
+          <br />
+          <div class="skills">
+            <label for="skills">Skills:</label>
 
-              <input type="radio" id="cse" name="dept" >
-               <label for="cse">CSE</label>
+            <input type="checkbox" id="html" name="skills" value="html" />
+            <label for="html">HTML</label>
 
-              <input type="radio" id="eee" name="dept">
-              <label for="eee">EEE</label>
+            <input type="checkbox" id="css" name="skills" value="css" />
+            <label for="css">CSS</label>
 
-              <input type="radio" id="civil" name="dept" >
-              <label for="civil">CIVIL</label>
-
-              <input type="radio" id="mech" name="dept">
-              <label for="mech">MECH</label><br><br>
-
-
-              <label for="yop">YOG</label>
-              <input list="yog" id="yop" name="yop">
-
-              <datalist id="yog">
-                <option >2017</option>
-                <option >2018</option>
-                <option >2019</option>
-                <option >2020</option>
-                <option >2021</option>
-                <option >2022</option>
-                <option >2023</option>
-                </datalist>
-                  <br><br>
-                 <label >Skills</label>
-
-
-                   <input type="checkbox" id="html" name="html">
-                   <label for="html">HTML</label>
-
-                    <input type="checkbox" id="css" name="css">
-                    <label for="css">CSS</label>
-
-                    <input type="checkbox" id="java" name="java">
-                    <label for="java">JAVA</label>
-                 
-            </fieldset><br><br>
-
-            <a href="https://thetapacademy.com/">Submit</a>
-          
-
+            <input type="checkbox" id="java" name="skills" value="java" />
+            <label for="java">JAVA</label>
+          </div>
+        </fieldset>
+        <input type="submit" value="Submit" class="button" />
+        <!-- <a href="https://thetapacademy.com/">Submit</a> -->
       </form>
-      </center>
-    </body>
+    </div>
+  </body>
 </html>
